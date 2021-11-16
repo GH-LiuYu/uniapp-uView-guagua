@@ -95,46 +95,27 @@
 		data() {
 			return {
 				indexList: indexList(),
-				urls: [
-					'https://cdn.uviewui.com/uview/album/1.jpg',
-					'https://cdn.uviewui.com/uview/album/2.jpg',
-					'https://cdn.uviewui.com/uview/album/3.jpg',
-					'https://cdn.uviewui.com/uview/album/4.jpg',
-					'https://cdn.uviewui.com/uview/album/5.jpg',
-					'https://cdn.uviewui.com/uview/album/6.jpg',
-					'https://cdn.uviewui.com/uview/album/7.jpg',
-					'https://cdn.uviewui.com/uview/album/8.jpg',
-					'https://cdn.uviewui.com/uview/album/9.jpg',
-					'https://cdn.uviewui.com/uview/album/10.jpg',
-				],
-				names: [
-					"勇往无敌", 
-					"疯狂的迪飙",
-					"磊爱可",
-					"梦幻梦幻梦", "枫中飘瓢", "飞翔天使",
-					"曾经第一", "追风幻影族长", "麦小姐", "胡格罗雅", "Red磊磊", "乐乐立立", "青龙爆风", "跑跑卡叮车", "山里狼", "supersonic超"
-				],
-				// list:[
-				// 	"A":[],
-				// 	"B":[],
-					
-				// ]
+				list:[
+					{st:"A",data:[{name:'勇往无敌',url:'https://cdn.uviewui.com/uview/album/1.jpg'},{name:'麦小姐',url:'https://cdn.uviewui.com/uview/album/2.jpg'}]},
+					{st:"B",data:[{name:'疯狂的迪飙',url:'https://cdn.uviewui.com/uview/album/3.jpg'},{name:'胡格罗雅',url:'https://cdn.uviewui.com/uview/album/4.jpg'}]},
+					{st:"C",data:[{name:'梦幻梦幻梦',url:'https://cdn.uviewui.com/uview/album/5.jpg'},{name:'乐乐立立',url:'https://cdn.uviewui.com/uview/album/6.jpg'}]}
+				]
 			}
 		},
 		computed: {
 			itemArr() {
 				return this.indexList.map((item,index) => {
 					const arr = []
-					// if(){
-						
-					// }
-					for (let i = 0; i < 10; i++) {
-						arr.push({
-                            // 复制后解开下面两行注释
-							name: this.names[uni.$u.random(0, this.names.length - 1)],
-							url: this.urls[uni.$u.random(0, this.urls.length - 1)]
-						})
+					if(this.list[index]&&this.list[index]['st']===item){
+						for (let i = 0; i < this.list[index]['data'].length; i++) {
+							arr.push({
+						   // 复制后解开下面两行注释
+								name: this.list[index]['data'][i].name,
+								url: this.list[index]['data'][i].url
+							})
+						}
 					}
+					console.log(arr)
 					return arr
 				})
 			}
