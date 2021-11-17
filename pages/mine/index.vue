@@ -1,50 +1,75 @@
 <template>
-	<view class="wrap">
-		<u-row gutter="16">
-			<u-col span="3">
-				<view class="demo-layout bg-purple"></view>
-			</u-col>
-			<u-col span="4">
-				<view class="demo-layout bg-purple-light"></view>
-			</u-col>
-			<u-col span="5">
-				<view class="demo-layout bg-purple-dark"></view>
-			</u-col>
-		</u-row>
-		<u-row gutter="16" justify="space-between">
-			<u-col span="3">
-				<view class="demo-layout bg-purple"></view>
-			</u-col>
-			<u-col span="9">
-				<view class="demo-layout bg-purple-light"></view>
-			</u-col>
-		</u-row>
+	<view style="background-color:white">
+	<!-- 	<view class="u-flex user-box u-p-l-30 u-p-r-20 u-p-b-30">
+			<view class="u-m-r-10">
+				<u-avatar :src="pic" size="140"></u-avatar>
+			</view>
+			<view class="u-flex-1">
+				<view class="u-font-18 u-p-b-20">uView ui</view>
+				<view class="u-font-14 u-tips-color">微信号:helang_uView</view>
+			</view>
+			<view class="u-m-l-10 u-p-10">
+				<u-icon name="scan" color="#969799" size="28"></u-icon>
+			</view>
+			<view class="u-m-l-10 u-p-10">
+				<u-icon name="arrow-right" color="#969799" size="28"></u-icon>
+			</view>
+		</view> -->
+		
+		<view class="u-m-t-20">
+			<u-cell-group>
+				<u-cell icon="rmb-circle" title="支付"></u-cell>
+			</u-cell-group>
+		</view>
+		
+		<view class="u-m-t-20">
+			<u-cell-group>
+				<u-cell icon="star" title="收藏"></u-cell>
+				<u-cell icon="photo" title="相册"></u-cell>
+				<u-cell icon="coupon" title="卡券"></u-cell>
+				<u-cell icon="heart" title="关注"></u-cell>
+			</u-cell-group>
+		</view>
+
+		<view class="u-m-t-20">
+			<u-cell-group>
+				<u-cell icon="setting" title="设置"></u-cell>
+			</u-cell-group>
+		</view>
 	</view>
 </template>
 
-<style scoped lang="scss">
-	.wrap {
-		padding: 24rpx;
+<script>
+	export default {
+		data() {
+			return {
+				pic:'https://uviewui.com/common/logo.png',
+				show:true
+			}
+		},
+		onLoad() {
+			
+		},
+		methods: {
+			
+		}
 	}
+</script>
 
-	.u-row {
-		margin: 40rpx 0;
-	}
+<style lang="scss">
+page{
+	background-color: #ededed;
+}
 
-	.demo-layout {
-		height: 80rpx;
-		border-radius: 8rpx;
+.camera{
+	width: 54px;
+	height: 44px;
+	
+	&:active{
+		background-color: #ededed;
 	}
-
-	.bg-purple {
-		background: #d3dce6;
-	}
-
-	.bg-purple-light {
-		background: #e5e9f2;
-	}
-
-	.bg-purple-dark {
-		background: #99a9bf;
-	}
+}
+.user-box{
+	background-color: #fff;
+}
 </style>

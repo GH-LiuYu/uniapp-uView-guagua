@@ -53,11 +53,11 @@
 			v-for="(item, index) in itemArr"
 		>
 			<!-- #ifdef APP-NVUE -->
-			<u-index-anchor :text="indexList[index]" :key="index"></u-index-anchor>
+			<u-index-anchor :text="indexLists[index]" :key="index"></u-index-anchor>
 			<!-- #endif -->
 			<u-index-item :key="index">
 				<!-- #ifndef APP-NVUE -->
-				<u-index-anchor :text="indexList[index]"></u-index-anchor>
+				<u-index-anchor :text="indexLists[index]"></u-index-anchor>
 				<!-- #endif -->
 				<u-cell
 					v-for="(item1, index1) in item"
@@ -99,23 +99,24 @@
 					{st:"A",data:[{name:'勇往无敌',url:'https://cdn.uviewui.com/uview/album/1.jpg'},{name:'麦小姐',url:'https://cdn.uviewui.com/uview/album/2.jpg'}]},
 					{st:"B",data:[{name:'疯狂的迪飙',url:'https://cdn.uviewui.com/uview/album/3.jpg'},{name:'胡格罗雅',url:'https://cdn.uviewui.com/uview/album/4.jpg'}]},
 					{st:"C",data:[{name:'梦幻梦幻梦',url:'https://cdn.uviewui.com/uview/album/5.jpg'},{name:'乐乐立立',url:'https://cdn.uviewui.com/uview/album/6.jpg'}]}
-				]
+				],
+				indexLists:[],
 			}
 		},
 		computed: {
 			itemArr() {
-				return this.indexList.map((item,index) => {
+				let self = this;
+				return self.indexList.map((item,index) => {
 					const arr = []
-					if(this.list[index]&&this.list[index]['st']===item){
-						for (let i = 0; i < this.list[index]['data'].length; i++) {
+					if(self.list[index]&&self.list[index]['st']===item){
+						self.indexLists.push(item)
+						for (let i = 0; i < self.list[index]['data'].length; i++) {
 							arr.push({
 						   // 复制后解开下面两行注释
-								name: this.list[index]['data'][i].name,
-								url: this.list[index]['data'][i].url
+								name: self.list[index]['data'][i].name,
+								url: self.list[index]['data'][i].url
 							})
 						}
-					}else{
-						 // this.indexList.splice(index,0) 
 					}
 					return arr
 				})
