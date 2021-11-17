@@ -3,19 +3,25 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "uView-index"
+				"navigationBarTitleText": "呱地"
+			}
+		},
+		{
+			"path": "pages/message/index",
+			"style": {
+				"navigationBarTitleText": "信息"
 			}
 		},
 		{
 			"path": "pages/friend/friend",
 			"style": {
-				"navigationBarTitleText": "uView-center"
+				"navigationBarTitleText": "通讯录"
 			}
 		},
 		{
 			"path": "pages/mine/index",
 			"style": {
-				"navigationBarTitleText": "uView-center"
+				"navigationBarTitleText": "我的"
 			}
 		}
 	],
@@ -30,21 +36,27 @@
 	    "selectedColor": "#303133",
 	    "borderStyle": "black",
 	    "backgroundColor": "#ffffff",
-	    "list": [{
-	        "pagePath": "pages/index/index",
-	        "iconPath": "static/index.png",
-	        "selectedIconPath": "static/index-selected.png",
-	        "text": "首页"
+	    "list": [
+			{
+			    "pagePath": "pages/index/index",
+			    "iconPath": "static/type.png",
+			    "selectedIconPath": "static/type_active.png",
+			    "text": "发现"
+			},{
+	        "pagePath": "pages/message/index",
+	        "iconPath": "static/chat.png",
+	        "selectedIconPath": "static/chat-active.png",
+	        "text": "信息"
 	    }, {
 	        "pagePath": "pages/friend/friend",
-	        "iconPath": "static/center.png",
-	        "selectedIconPath": "static/center-selected.png",
+	        "iconPath": "static/contacts.png",
+	        "selectedIconPath": "static/contacts-active.png",
 	        "text": "呱友"
 	    },
 		{
 		    "pagePath": "pages/mine/index",
-		    "iconPath": "static/center.png",
-		    "selectedIconPath": "static/center-selected.png",
+		    "iconPath": "static/mine.png",
+		    "selectedIconPath": "static/mine-active.png",
 		    "text": "我的"
 		}
 		]
