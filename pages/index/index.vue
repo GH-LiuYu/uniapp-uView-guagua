@@ -3,7 +3,7 @@
 		<view class="top"><u-search placeholder="找呱友" v-model="keyword" input-align="center"></u-search></view>
 		<view class="page-body">
 		            <view class="page-section page-section-gap">
-		                <map style="width: 100%; height: 300px;" :latitude="latitude" :longitude="longitude" :markers="covers">
+		                <map style="width: 100%; height: 100vh;" :latitude="latitude" :longitude="longitude" :markers="covers">
 		                </map>
 		            </view>
 		        </view>

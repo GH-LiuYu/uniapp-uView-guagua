@@ -114,8 +114,9 @@
 								url: this.list[index]['data'][i].url
 							})
 						}
+					}else{
+						 // this.indexList.splice(index,0) 
 					}
-					console.log(arr)
 					return arr
 				})
 			}
